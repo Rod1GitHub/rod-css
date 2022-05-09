@@ -2,6 +2,9 @@
 /* components/rod-css-nav-menu */
 /* Use: For megasites and multi-level navigation on mobile phones*/
 /* 100% SASS Portable */
+/* Content: */
+/* header-nav-bar */
+/* nav */
 /* ============================= */
 .header-nav-bar {
   height: 71px;
@@ -90,8 +93,12 @@ span.hsbc-left-chevron:before {
 }
 /* ============================= */
 /* components/rod-css-nav-buttons */
-/* Use: ul-circle, ul-square-image, ul-pill */
+/* Use: Buttons for ul and li */
 /* 100% SASS Portable */
+/* Content: */
+/* button-ul-circle */
+/* button-ul-square-image */
+/* button-ul-pill */
 /* ============================= */
 .button-ul-circle {
   display: flex;
@@ -195,6 +202,14 @@ span.hsbc-left-chevron:before {
 /* themes/rod-css-show-me-the-layout */
 /* Use: To display layout boxes and screen size*/
 /* 100% SASS Portable */
+/* Content: */
+/* body */
+/* div and HTML 5 semantic divs */
+/* container */
+/* auxiliary-box */
+/* row */
+/* col */
+/* help-show-me-screen-size */
 /* ============================= */
 body {
   border: 5px solid #2b8200;
