@@ -10,6 +10,7 @@
 /* - col */
 /* - help-show-me-screen-size */
 /* ============================= */
+
 body {
   border: 5px solid #2b8200;
   background-color: #55ff00;
@@ -22,23 +23,24 @@ div {
 
 /* Main HTML 5 semantic divs */
 header,
-nav,
-main,
-article,
-section,
-aside,
-footer,
-blockquote,
-figure,
-figcaption,
-address,
-code,
-cite,
-data,
-del,
-ins,
-time,
-var {
+  nav,
+  main,
+  article,
+  section,
+  aside,
+  footer,
+ /*  Other HTML 5 semantic divs */
+  blockquote,
+  figure,
+  figcaption,
+  address,
+  code,
+  cite,
+  data,
+  del,
+  ins,
+  time,
+  var {
   border: 5px solid orange;
   background-color: yellow;
 }
@@ -152,39 +154,56 @@ var {
   text-align: center;
   border: 1px solid black;
   padding: 0.5em;
-}
-@media (min-width: 1400px) {
-  .help-show-me-screen-size::before {
+
+  $breakpoints: (
+    "xxl": "(min-width: 1400px)",
+    "xl": "(max-width: 1399.98px)",
+    "lg": "(max-width: 1199.98px)",
+    "md": "(max-width: 991.98px)",
+    "sm": "(max-width: 767.98px)",
+    "xs": "(max-width: 575.98px)",
+  );
+
+  @mixin screen($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+
+    @if $raw-query {
+      $query: if(
+        type-of($raw-query) == "string",
+        unquote($raw-query),
+        inspect($raw-query)
+      );
+
+      @media #{$query} {
+        @content;
+      }
+    } @else {
+      @error 'No value found for `#{$breakpoint}`. '
+             + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+  }
+
+  @include screen("xxl") {
     background-color: rgb(111, 123, 167);
     content: "Screen size: xxl. Min-width: 1400px | Usually: desktop screens";
   }
-}
-@media (max-width: 1399.98px) {
-  .help-show-me-screen-size::before {
+  @include screen("xl") {
     background-color: darkorange;
     content: 'Screen size: xl. Min-width: 1200px Max-width: 1399.98px| Usually: most-used 13" laptops';
   }
-}
-@media (max-width: 1199.98px) {
-  .help-show-me-screen-size::before {
+  @include screen("lg") {
     background-color: yellow;
     content: "Screen size: lg. Min-width: 992px and Max-width 1199.98px | Usually: sm laptops";
   }
-}
-@media (max-width: 991.98px) {
-  .help-show-me-screen-size::before {
+  @include screen("md") {
     background-color: rgb(122, 197, 61);
     content: "Screen size: md. Min-width: 768px and Max-width: 991.98px | Usually: tablets and e-readers";
   }
-}
-@media (max-width: 767.98px) {
-  .help-show-me-screen-size::before {
+  @include screen("sm") {
     background-color: lightskyblue;
     content: "Screen size: sm. Min-width: 576px and Max-width: 767.98px | Usually: smartphones horizontal-view";
   }
-}
-@media (max-width: 575.98px) {
-  .help-show-me-screen-size::before {
+  @include screen("xs") {
     background-color: pink;
     content: "Screen size: xs. Max-width: 575.98px | Usually: smartphones";
   }
