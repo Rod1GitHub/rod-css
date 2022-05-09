@@ -1,15 +1,14 @@
 /* ============================= */
-/* themes/rod-css-show-me-the-layout */
+/* rod-css-show-me-the-layout */
 /* Use: To display layout boxes and screen size*/
-/* 100% SASS Portable */
 /* Content: */
-/* body */
-/* div and HTML 5 semantic divs */
-/* container */
-/* auxiliary-box */
-/* row */
-/* col */
-/* help-show-me-screen-size */
+/* - body */
+/* - div and HTML5 semantic divs */
+/* - container */
+/* - auxiliary-box */
+/* - row */
+/* - col */
+/* - help-show-me-screen-size */
 /* ============================= */
 
 body {
@@ -24,24 +23,24 @@ div {
 
 // HTML 5 semantic divs
 header,
-nav,
-main,
-article,
-section,
-aside,
-footer,
-////////////////////////////////
-blockquote,
-figure,
-figcaption,
-address,
-code,
-cite,
-data,
-del,
-ins,
-time,
-var {
+  nav,
+  main,
+  article,
+  section,
+  aside,
+  footer,
+  ////////////////////////////////
+  blockquote,
+  figure,
+  figcaption,
+  address,
+  code,
+  cite,
+  data,
+  del,
+  ins,
+  time,
+  var {
   border: 5px solid orange;
   background-color: yellow;
 }
@@ -180,7 +179,7 @@ var {
       }
     } @else {
       @error 'No value found for `#{$breakpoint}`. '
-           + 'Please make sure it is defined in `$breakpoints` map.';
+             + 'Please make sure it is defined in `$breakpoints` map.';
     }
   }
 
