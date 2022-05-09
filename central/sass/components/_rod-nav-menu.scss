@@ -1,0 +1,122 @@
+/* ============================= */
+/* components/rod-nav-menu */
+/* Use: For megasites and multi-level navigation on mobile phones*/
+/* 100% SASS Portable */
+/* Content: */
+/* header-nav-bar */
+/* nav */
+/* ============================= */
+
+.header-nav-bar {
+  height: 71px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; //needed to avoid child button height change
+  padding-right: 5px;
+  padding-left: 30px;
+
+  &__brand {
+    font-family: "Fredoka One";
+    font-size: 1.25em; //20px
+  }
+
+  &__button-pill-menu {
+    background-color: black;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+
+    & > a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+span.hsbc-right-chevron:before {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 10;
+  content: "\f061";
+}
+
+span.hsbc-left-chevron:before {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 10;
+  content: "\f060";
+}
+
+.nav {
+  display: block;
+
+  &__wrapper {
+    /* display: none;
+      opacity: 0;
+      top: 100%;
+       */
+    background-color: #1e1e1e;
+    color: #fff;
+    font-weight: 200;
+    left: 0;
+    height: calc(100vh - 71px);
+    overflow: hidden;
+    overflow-y: auto;
+    /* position: absolute; */
+    -webkit-transform: translate3d(0, -5%, 0);
+    transform: translate3d(0, -5%, 0);
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+
+    & a {
+      color: inherit;
+      text-decoration: none;
+    }
+    &--lifted {
+      color: blue;
+      display: block;
+      -webkit-transition: opacity 0.13s ease-in-out,
+        -webkit-transform 0.25s ease-in-out;
+      transition: transform 0.25s ease-in-out, opacity 0.13s ease-in-out;
+      transition: transform 0.25s ease-in-out, opacity 0.13s ease-in-out,
+        -webkit-transform 0.25s ease-in-out;
+    }
+    &--open {
+      color: #fff;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+  &__menu {
+  }
+  &__submenu {
+  }
+
+  &__item {
+    &--overview {
+    }
+    &--current {
+    }
+    &--active {
+    }
+  }
+
+  &__back {
+    background-color: green;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #fff;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    padding: 20px 30px 20px 0;
+    /* position: relative; */
+
+    &--current {
+    }
+  }
+  &__group {
+  }
+}

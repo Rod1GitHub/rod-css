@@ -1,0 +1,210 @@
+/* ============================= */
+/* rod-css-show-me-the-layout */
+/* Use: To display layout boxes and screen size*/
+/* Content: */
+/* - body */
+/* - div and HTML5 semantic divs */
+/* - container */
+/* - auxiliary-box */
+/* - row */
+/* - col */
+/* - help-show-me-screen-size */
+/* ============================= */
+
+body {
+  border: 5px solid #2b8200;
+  background-color: #55ff00;
+}
+
+div {
+  border: 5px solid red;
+  background-color: rgb(255, 82, 82);
+}
+
+/* Main HTML 5 semantic divs */
+header,
+  nav,
+  main,
+  article,
+  section,
+  aside,
+  footer,
+ /*  Other HTML 5 semantic divs */
+  blockquote,
+  figure,
+  figcaption,
+  address,
+  code,
+  cite,
+  data,
+  del,
+  ins,
+  time,
+  var {
+  border: 5px solid orange;
+  background-color: yellow;
+}
+
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl,
+.container-fluid {
+  border: 5px solid purple;
+  background-color: violet;
+}
+
+.auxiliary-box {
+  border: 5px dashed rgb(118, 118, 118);
+  background-color: rgb(201, 201, 201);
+}
+
+.row {
+  border: 5px solid blue;
+  background-color: rgb(175, 255, 228);
+}
+
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.col-sm-auto,
+.col-md-auto,
+.col-lg-auto,
+.col-xl-auto,
+.col-xxl-auto,
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-xl-1,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xxl-1,
+.col-xxl-2,
+.col-xxl-3,
+.col-xxl-4,
+.col-xxl-5,
+.col-xxl-6,
+.col-xxl-7,
+.col-xxl-8,
+.col-xxl-9,
+.col-xxl-10,
+.col-xxl-11,
+.col-xxl-12 {
+  border: 5px solid rgb(0, 186, 186);
+  background-color: rgb(255, 211, 218);
+}
+
+/* Display the screen size */
+.help-show-me-screen-size::before {
+  display: block;
+  text-align: center;
+  border: 1px solid black;
+  padding: 0.5em;
+
+  $breakpoints: (
+    "xxl": "(min-width: 1400px)",
+    "xl": "(max-width: 1399.98px)",
+    "lg": "(max-width: 1199.98px)",
+    "md": "(max-width: 991.98px)",
+    "sm": "(max-width: 767.98px)",
+    "xs": "(max-width: 575.98px)",
+  );
+
+  @mixin screen($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+
+    @if $raw-query {
+      $query: if(
+        type-of($raw-query) == "string",
+        unquote($raw-query),
+        inspect($raw-query)
+      );
+
+      @media #{$query} {
+        @content;
+      }
+    } @else {
+      @error 'No value found for `#{$breakpoint}`. '
+             + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+  }
+
+  @include screen("xxl") {
+    background-color: rgb(111, 123, 167);
+    content: "Screen size: xxl. Min-width: 1400px | Usually: desktop screens";
+  }
+  @include screen("xl") {
+    background-color: darkorange;
+    content: 'Screen size: xl. Min-width: 1200px Max-width: 1399.98px| Usually: most-used 13" laptops';
+  }
+  @include screen("lg") {
+    background-color: yellow;
+    content: "Screen size: lg. Min-width: 992px and Max-width 1199.98px | Usually: sm laptops";
+  }
+  @include screen("md") {
+    background-color: rgb(122, 197, 61);
+    content: "Screen size: md. Min-width: 768px and Max-width: 991.98px | Usually: tablets and e-readers";
+  }
+  @include screen("sm") {
+    background-color: lightskyblue;
+    content: "Screen size: sm. Min-width: 576px and Max-width: 767.98px | Usually: smartphones horizontal-view";
+  }
+  @include screen("xs") {
+    background-color: pink;
+    content: "Screen size: xs. Max-width: 575.98px | Usually: smartphones";
+  }
+}

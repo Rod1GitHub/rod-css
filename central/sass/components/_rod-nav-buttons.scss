@@ -1,0 +1,116 @@
+/* ============================= */
+/* components/rod-nav-buttons */
+/* Use: Buttons for ul and li */
+/* 100% SASS Portable */
+/* Content: */
+/* - button-ul-circle */
+/* - button-ul-square-image */
+/* - button-ul-pill */
+/* ============================= */
+
+.button-ul-circle {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.button-ul-circle > li > a {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+
+  color: white;
+  background-color: black;
+  border: 2px solid black;
+  box-sizing: border-box;
+
+  font-size: 14px;
+  text-decoration: none;
+  list-style-type: none;
+
+  cursor: pointer;
+  padding: 10px;
+
+  margin-bottom: 10px;
+}
+.button-ul-circle > li > .--active {
+  background-color: black;
+  color: white;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 0%;
+}
+
+.button-ul-square-image {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: -20px;
+}
+
+// Square button using a tag
+.button-ul-square-image > li > a {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  height: 150px;
+  width: 150px;
+
+  color: white;
+
+  box-sizing: border-box;
+
+  font-size: 14px;
+  text-decoration: none;
+  list-style-type: none;
+
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.button-ul-square-image li > a > figure {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: black;
+  border: 3px solid black;
+}
+
+.button-ul-square-image li > a > figure > img {
+  max-width: 100%;
+  max-height: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.button-ul-square-image li > a > figure > figcaption {
+  padding: 10px;
+}
+
+.button-ul-pill {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.button-ul-pill > li > a {
+  background-color: black;
+  color: white;
+  margin: 5px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}

@@ -1,0 +1,13 @@
+// How to use it:
+// sass --watch ./central/sass/main.scss ./central/css/master.css
+
+// main.scss # Manifest File
+// 1. abstracts
+// 2. vendors
+// 3. base
+// 4. layout (grid)
+// 5. components (styles)
+@import "./components/rod-nav-menu";
+@import "./components/rod-nav-buttons";
+// 6. pages
+// 7. themes
