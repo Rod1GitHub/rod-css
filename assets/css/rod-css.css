@@ -1,0 +1,377 @@
+/* ============================= */
+/* components/rod-css-nav-menu */
+/* Use: For megasites and multi-level navigation on mobile phones*/
+/* 100% SASS Portable */
+/* ============================= */
+.header-nav-bar {
+  height: 71px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 5px;
+  padding-left: 30px;
+}
+.header-nav-bar__brand {
+  font-family: "Fredoka One";
+  font-size: 1.25em;
+}
+.header-nav-bar__button-pill-menu {
+  background-color: black;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.header-nav-bar__button-pill-menu > a {
+  color: white;
+  text-decoration: none;
+}
+
+span.hsbc-right-chevron:before {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 10;
+  content: "\f061";
+}
+
+span.hsbc-left-chevron:before {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 10;
+  content: "\f060";
+}
+
+.nav {
+  display: block;
+}
+.nav__wrapper {
+  /* display: none;
+    opacity: 0;
+    top: 100%;
+     */
+  background-color: #1e1e1e;
+  color: #fff;
+  font-weight: 200;
+  left: 0;
+  height: calc(100vh - 71px);
+  overflow: hidden;
+  overflow-y: auto;
+  /* position: absolute; */
+  -webkit-transform: translate3d(0, -5%, 0);
+  transform: translate3d(0, -5%, 0);
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.nav__wrapper a {
+  color: inherit;
+  text-decoration: none;
+}
+.nav__wrapper--lifted {
+  color: blue;
+  display: block;
+  -webkit-transition: opacity 0.13s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, opacity 0.13s ease-in-out;
+  transition: transform 0.25s ease-in-out, opacity 0.13s ease-in-out, -webkit-transform 0.25s ease-in-out;
+}
+.nav__wrapper--open {
+  color: #fff;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+.nav__back {
+  background-color: green;
+}
+.nav__link {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  padding: 20px 30px 20px 0;
+  /* position: relative; */
+}
+/* ============================= */
+/* components/rod-css-nav-buttons */
+/* Use: ul-circle, ul-square-image, ul-pill */
+/* 100% SASS Portable */
+/* ============================= */
+.button-ul-circle {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button-ul-circle > li > a {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+  border: 2px solid black;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-decoration: none;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.button-ul-circle > li > .--active {
+  background-color: black;
+  color: white;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 0%;
+}
+
+.button-ul-square-image {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: -20px;
+}
+
+.button-ul-square-image > li > a {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+  color: white;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-decoration: none;
+  list-style-type: none;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.button-ul-square-image li > a > figure {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: black;
+  border: 3px solid black;
+}
+
+.button-ul-square-image li > a > figure > img {
+  max-width: 100%;
+  max-height: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.button-ul-square-image li > a > figure > figcaption {
+  padding: 10px;
+}
+
+.button-ul-pill {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.button-ul-pill > li > a {
+  background-color: black;
+  color: white;
+  margin: 5px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* ============================= */
+/* themes/rod-css-show-me-the-layout */
+/* Use: To display layout boxes and screen size*/
+/* 100% SASS Portable */
+/* ============================= */
+body {
+  border: 5px solid #2b8200;
+  background-color: #55ff00;
+}
+
+div {
+  border: 5px solid red;
+  background-color: rgb(255, 82, 82);
+}
+
+header,
+nav,
+main,
+article,
+section,
+aside,
+footer,
+blockquote,
+figure,
+figcaption,
+address,
+code,
+cite,
+data,
+del,
+ins,
+time,
+var {
+  border: 5px solid orange;
+  background-color: yellow;
+}
+
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl,
+.container-fluid {
+  border: 5px solid purple;
+  background-color: violet;
+}
+
+.auxiliary-box {
+  border: 5px dashed rgb(118, 118, 118);
+  background-color: rgb(201, 201, 201);
+}
+
+.row {
+  border: 5px solid blue;
+  background-color: rgb(175, 255, 228);
+}
+
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.col-sm-auto,
+.col-md-auto,
+.col-lg-auto,
+.col-xl-auto,
+.col-xxl-auto,
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-xl-1,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xxl-1,
+.col-xxl-2,
+.col-xxl-3,
+.col-xxl-4,
+.col-xxl-5,
+.col-xxl-6,
+.col-xxl-7,
+.col-xxl-8,
+.col-xxl-9,
+.col-xxl-10,
+.col-xxl-11,
+.col-xxl-12 {
+  border: 5px solid rgb(0, 186, 186);
+  background-color: rgb(255, 211, 218);
+}
+
+.help-show-me-screen-size::before {
+  display: block;
+  text-align: center;
+  border: 1px solid black;
+  padding: 0.5em;
+}
+@media (min-width: 1400px) {
+  .help-show-me-screen-size::before {
+    background-color: rgb(111, 123, 167);
+    content: "Screen size: xxl. Min-width: 1400px | Usually: desktop screens";
+  }
+}
+@media (max-width: 1399.98px) {
+  .help-show-me-screen-size::before {
+    background-color: darkorange;
+    content: 'Screen size: xl. Min-width: 1200px Max-width: 1399.98px| Usually: most-used 13" laptops';
+  }
+}
+@media (max-width: 1199.98px) {
+  .help-show-me-screen-size::before {
+    background-color: yellow;
+    content: "Screen size: lg. Min-width: 992px and Max-width 1199.98px | Usually: sm laptops";
+  }
+}
+@media (max-width: 991.98px) {
+  .help-show-me-screen-size::before {
+    background-color: rgb(122, 197, 61);
+    content: "Screen size: md. Min-width: 768px and Max-width: 991.98px | Usually: tablets and e-readers";
+  }
+}
+@media (max-width: 767.98px) {
+  .help-show-me-screen-size::before {
+    background-color: lightskyblue;
+    content: "Screen size: sm. Min-width: 576px and Max-width: 767.98px | Usually: smartphones horizontal-view";
+  }
+}
+@media (max-width: 575.98px) {
+  .help-show-me-screen-size::before {
+    background-color: pink;
+    content: "Screen size: xs. Max-width: 575.98px | Usually: smartphones";
+  }
+}
+
+/*# sourceMappingURL=rod-css.css.map */
